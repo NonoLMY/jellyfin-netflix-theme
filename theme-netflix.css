@@ -59,20 +59,30 @@
 }
 
 /* ===== FOND GENERAL ===== */
+html.preload,
+html.layout-desktop,
 html {
   background: #141414 !important;
-  color: var(--textColor) !important;
+  background-color: #141414 !important;
+  color: #e5e5e5 !important;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
-.backgroundContainer,
-.backdropImage {
+body,
+body.withSectionTabs,
+body.libraryDocument,
+body.withSectionTabs.libraryDocument {
   background: #141414 !important;
   background-color: #141414 !important;
 }
 
-.backgroundContainer.withBackdrop {
+.backgroundContainer,
+.backdropImage,
+.backgroundContainer.withBackdrop,
+.mainAnimatedPages,
+.skinBody {
   background: #141414 !important;
+  background-color: #141414 !important;
 }
 
 /* ===== HEADER ===== */
