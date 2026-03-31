@@ -2,7 +2,6 @@
 
 /* ===== VARIABLES MUI - COULEURS NETFLIX ===== */
 :root, body {
-  /* Accent rouge Netflix (remplace le bleu par défaut) */
   --jf-palette-primary-main: #e50914;
   --jf-palette-primary-mainChannel: 229 9 20;
   --jf-palette-primary-dark: #b20710;
@@ -11,7 +10,6 @@
   --jf-palette-primary-lightChannel: 244 6 18;
   --jf-palette-primary-contrastText: #fff;
   --jf-palette-primary-contrastTextChannel: 255 255 255;
-
   --jf-palette-secondary-main: #e50914;
   --jf-palette-secondary-mainChannel: 229 9 20;
   --jf-palette-secondary-dark: #b20710;
@@ -20,79 +18,191 @@
   --jf-palette-secondary-lightChannel: 244 6 18;
   --jf-palette-secondary-contrastText: #fff;
   --jf-palette-secondary-contrastTextChannel: 255 255 255;
-
-  /* Progress bars rouges */
   --jf-palette-LinearProgress-primaryBg: rgba(229, 9, 20, 0.3);
   --jf-palette-LinearProgress-secondaryBg: rgba(229, 9, 20, 0.3);
-
-  /* Slider rouge */
   --jf-palette-Slider-primaryTrack: rgba(229, 9, 20, 0.5);
   --jf-palette-Slider-secondaryTrack: rgba(229, 9, 20, 0.5);
 }
 
-/* ===== INDICATEUR DE COMPTAGE (bleu → rouge) ===== */
-.countIndicator.indicator {
-  background: #e50914 !important;
+/* ===== HEADER NETFLIX ===== */
+/* Header transparent avec dégradé, plus fin */
+.skinHeader,
+.skinHeader-withBackground {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%) !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
-/* ===== BARRE DE PROGRESSION ROUGE ===== */
-.itemProgressBarForeground {
-  background: #e50914 !important;
+/* Header compact */
+.headerTop {
+  height: 48px !important;
+  min-height: 48px !important;
 }
 
-/* ===== BOUTON PLAY OVERLAY SUR CARTE ===== */
-.cardOverlayButton-br {
-  background: rgba(229, 9, 20, 0.85) !important;
+/* Titre Jellyfin en style Netflix (plus gros, bold) */
+.headerButton.headerHomeButton,
+.pageTitleWithLogo {
+  color: #e50914 !important;
+  font-weight: 800 !important;
+}
+
+/* Onglets style Netflix (texte simple, pas de bordure) */
+.headerTabs .emby-tab-button {
+  text-transform: none !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  color: #b3b3b3 !important;
+  transition: color 0.2s ease !important;
+}
+
+.headerTabs .emby-tab-button:hover {
   color: #fff !important;
+}
+
+.emby-tab-button-active {
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+
+.emby-tab-button-active .tabButtonContent::after {
+  background: #e50914 !important;
+  height: 3px !important;
+  border-radius: 2px !important;
+}
+
+/* ===== FOND ===== */
+.backgroundContainer {
+  background: #141414 !important;
+}
+
+/* ===== CARTES - STYLE NETFLIX ===== */
+/* Zoom prononcé au survol */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s !important;
+  border-radius: 4px !important;
+  overflow: visible !important;
+}
+
+.card:hover {
+  transform: scale(1.15) !important;
+  z-index: 100 !important;
+  position: relative !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Coins arrondis sur les images */
+.cardImageContainer,
+.cardPadder {
+  border-radius: 4px !important;
+  overflow: hidden !important;
+}
+
+.cardPadder {
+  background-color: #181818 !important;
+}
+
+/* Overlay gradient en bas de la carte au survol */
+.cardOverlayContainer {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 40%, transparent 70%) !important;
+  opacity: 0;
+  transition: opacity 0.3s ease !important;
+}
+
+.card:hover .cardOverlayContainer {
+  opacity: 1 !important;
+}
+
+/* Texte sous les cartes */
+.cardText {
+  font-weight: 500 !important;
+  color: #b3b3b3 !important;
+  transition: color 0.2s ease !important;
+}
+
+.card:hover .cardText {
+  color: #fff !important;
+}
+
+/* Bouton play sur carte */
+.cardOverlayButton-br {
+  background: rgba(229, 9, 20, 0.9) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 50% !important;
+  transition: transform 0.2s ease, background 0.2s ease !important;
 }
 
 .cardOverlayButton-br:hover {
   background: #e50914 !important;
+  transform: scale(1.2) !important;
 }
 
-/* ===== HEADER NETFLIX (dégradé transparent) ===== */
-.skinHeader,
-.skinHeader-withBackground {
-  background: linear-gradient(180deg, rgba(20, 20, 20, 0.9) 0%, transparent 100%) !important;
-}
-
-/* ===== ONGLETS ACTIFS (soulignement rouge) ===== */
-.emby-tab-button-active .tabButtonContent::after {
+/* Indicateur comptage (bleu → rouge) */
+.countIndicator.indicator {
   background: #e50914 !important;
+  border-radius: 3px !important;
+  font-weight: 700 !important;
+}
+
+/* Barre de progression rouge */
+.itemProgressBarForeground {
+  background: #e50914 !important;
+}
+
+.itemProgressBar {
+  background: rgba(255, 255, 255, 0.15) !important;
+  height: 3px !important;
+  border-radius: 0 !important;
+}
+
+/* ===== TITRES DE SECTION ===== */
+/* Style Netflix : gras, avec flèche au survol */
+.sectionTitle {
+  font-weight: 700 !important;
+  font-size: 1.4em !important;
+  color: #e5e5e5 !important;
+  transition: color 0.2s ease !important;
+}
+
+.sectionTitle:hover {
+  color: #fff !important;
 }
 
 /* ===== SIDEBAR ===== */
 .mainDrawer {
-  background: rgba(20, 20, 20, 0.95) !important;
+  background: rgba(10, 10, 10, 0.97) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+}
+
+.navMenuOption {
+  color: #b3b3b3 !important;
+  transition: color 0.2s ease, background 0.2s ease !important;
+}
+
+.navMenuOption:hover {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.05) !important;
 }
 
 .navMenuOption-selected {
-  background: rgba(229, 9, 20, 0.15) !important;
+  background: rgba(229, 9, 20, 0.12) !important;
   color: #fff !important;
+  border-left: 3px solid #e50914 !important;
 }
 
-/* ===== CARTES - ZOOM NETFLIX AU SURVOL ===== */
-.card {
-  transition: transform 0.3s ease !important;
-}
-
-.card:hover {
-  transform: scale(1.05) !important;
-  z-index: 10 !important;
-  position: relative !important;
-}
-
-/* Fond des cartes sans image */
-.cardPadder {
-  background-color: #1a1a1a !important;
-}
-
-/* ===== BOUTON SUBMIT / PLAY ===== */
+/* ===== PAGE DETAIL (film/série) ===== */
+/* Bouton play rouge */
 .button-submit,
 .fab,
 .detailButton-primary {
   background: #e50914 !important;
   color: #fff !important;
+  border: none !important;
+  border-radius: 4px !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  transition: background 0.2s ease !important;
 }
 
 .button-submit:hover,
@@ -101,18 +211,25 @@
   background: #f40612 !important;
 }
 
-/* ===== BOUTONS SECONDAIRES ===== */
+/* Boutons secondaires style Netflix */
 .detailButton:not(.detailButton-primary) {
-  background: rgba(255, 255, 255, 0.08) !important;
+  background: rgba(109, 109, 110, 0.4) !important;
   color: #fff !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border: none !important;
+  border-radius: 4px !important;
+  transition: background 0.2s ease !important;
 }
 
 .detailButton:not(.detailButton-primary):hover {
-  background: rgba(255, 255, 255, 0.15) !important;
+  background: rgba(109, 109, 110, 0.7) !important;
 }
 
-/* ===== FOCUS / SELECTION (remplace le bleu) ===== */
+/* Dégradé sur le backdrop de la page detail */
+.detailPagePrimaryContainer {
+  background: linear-gradient(0deg, #141414 0%, rgba(20, 20, 20, 0.8) 30%, transparent 100%) !important;
+}
+
+/* ===== FORMULAIRES ===== */
 .emby-input:focus,
 .emby-textarea:focus,
 .emby-select:focus {
@@ -125,20 +242,43 @@
   background-color: #e50914 !important;
 }
 
-/* ===== APPFOOTER ===== */
+/* ===== FOOTER ===== */
 .appfooter {
   background: #141414 !important;
+  border-top: none !important;
 }
 
-/* ===== SCROLLBAR ===== */
+/* ===== EPURER L'INTERFACE ===== */
+/* Masquer le sous-titre "Jellyfin" si présent */
+.headerButton.headerCastButton {
+  opacity: 0.7;
+}
+
+/* Scrollbar discrète */
 * {
-  scrollbar-color: #333 #141414;
+  scrollbar-color: #333 transparent;
   scrollbar-width: thin;
+}
+
+/* ===== ANIMATIONS ===== */
+/* Fade-in des sections au chargement */
+.itemsContainer {
+  animation: fadeIn 0.4s ease !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 50em) {
   .card:hover {
-    transform: scale(1.02) !important;
+    transform: scale(1.05) !important;
+  }
+
+  .headerTop {
+    height: 40px !important;
+    min-height: 40px !important;
   }
 }
