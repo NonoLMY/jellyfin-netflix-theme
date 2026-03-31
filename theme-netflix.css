@@ -1,27 +1,8 @@
 /* Netflix Theme for Jellyfin 10.11.x */
 
+/* ===== VARIABLES MUI - COULEURS NETFLIX ===== */
 :root, body {
-  /* ===== FOND ===== */
-  --jf-palette-background-default: #141414;
-  --jf-palette-background-defaultChannel: 20 20 20;
-  --jf-palette-background-paper: #1a1a1a;
-  --jf-palette-background-paperChannel: 26 26 26;
-  --jf-palette-common-background: #141414;
-  --jf-palette-common-backgroundChannel: 20 20 20;
-
-  /* ===== TEXTE ===== */
-  --jf-palette-text-primary: #e5e5e5;
-  --jf-palette-text-primaryChannel: 229 229 229;
-  --jf-palette-text-secondary: rgba(255, 255, 255, 0.7);
-  --jf-palette-text-secondaryChannel: 255 255 255;
-  --jf-palette-text-disabled: rgba(255, 255, 255, 0.4);
-  --jf-palette-text-icon: rgba(255, 255, 255, 0.5);
-  --jf-palette-common-white: #fff;
-  --jf-palette-common-black: #000;
-  --jf-palette-common-onBackground: #fff;
-  --jf-palette-common-onBackgroundChannel: 255 255 255;
-
-  /* ===== ACCENT ROUGE NETFLIX ===== */
+  /* Accent rouge Netflix (remplace le bleu par défaut) */
   --jf-palette-primary-main: #e50914;
   --jf-palette-primary-mainChannel: 229 9 20;
   --jf-palette-primary-dark: #b20710;
@@ -31,7 +12,6 @@
   --jf-palette-primary-contrastText: #fff;
   --jf-palette-primary-contrastTextChannel: 255 255 255;
 
-  /* ===== SECONDAIRE ===== */
   --jf-palette-secondary-main: #e50914;
   --jf-palette-secondary-mainChannel: 229 9 20;
   --jf-palette-secondary-dark: #b20710;
@@ -41,62 +21,57 @@
   --jf-palette-secondary-contrastText: #fff;
   --jf-palette-secondary-contrastTextChannel: 255 255 255;
 
-  /* ===== ACTIONS ===== */
-  --jf-palette-action-active: rgba(255, 255, 255, 0.56);
-  --jf-palette-action-activeChannel: 255 255 255;
-  --jf-palette-action-hover: rgba(255, 255, 255, 0.08);
-  --jf-palette-action-selected: rgba(255, 255, 255, 0.16);
-  --jf-palette-action-selectedChannel: 255 255 255;
-  --jf-palette-action-disabled: rgba(255, 255, 255, 0.3);
-  --jf-palette-action-disabledBackground: rgba(255, 255, 255, 0.12);
-  --jf-palette-action-focus: rgba(255, 255, 255, 0.12);
-
-  /* ===== BORDURES ===== */
-  --jf-palette-divider: rgba(255, 255, 255, 0.08);
-  --jf-palette-dividerChannel: 255 255 255;
-
-  /* ===== HEADER ===== */
-  --jf-palette-AppBar-defaultBg: #141414;
-  --jf-palette-AppBar-darkBg: #141414;
-  --jf-palette-AppBar-darkColor: #fff;
-
-  /* ===== BOUTONS ===== */
-  --jf-palette-Button-inheritContainedBg: #333;
-  --jf-palette-Button-inheritContainedHoverBg: #444;
-
-  /* ===== CHAMPS ===== */
-  --jf-palette-FilledInput-bg: rgba(255, 255, 255, 0.09);
-  --jf-palette-FilledInput-hoverBg: rgba(255, 255, 255, 0.13);
-  --jf-palette-FilledInput-disabledBg: rgba(255, 255, 255, 0.04);
-
-  /* ===== NOTIFICATIONS ===== */
-  --jf-palette-SnackbarContent-bg: #222;
-  --jf-palette-SnackbarContent-color: rgba(255, 255, 255, 0.87);
-  --jf-palette-Tooltip-bg: rgba(40, 40, 40, 0.95);
-
-  /* ===== PROGRESS BAR ===== */
+  /* Progress bars rouges */
   --jf-palette-LinearProgress-primaryBg: rgba(229, 9, 20, 0.3);
   --jf-palette-LinearProgress-secondaryBg: rgba(229, 9, 20, 0.3);
 
-  /* ===== ETOILE ===== */
-  --jf-palette-starIcon-main: #f2b01e;
-  --jf-palette-starIcon-mainChannel: 242 176 30;
-
-  /* ===== ERREUR ===== */
-  --jf-palette-error-main: #c62828;
-  --jf-palette-error-mainChannel: 198 40 40;
-  --jf-palette-error-dark: #8a1c1c;
-  --jf-palette-error-darkChannel: 138 28 28;
-  --jf-palette-error-light: #d15353;
-  --jf-palette-error-lightChannel: 209 83 83;
-  --jf-palette-error-contrastText: #fff;
-  --jf-palette-error-contrastTextChannel: 255 255 255;
-
-  /* ===== FORME ===== */
-  --jf-shape-borderRadius: 4;
+  /* Slider rouge */
+  --jf-palette-Slider-primaryTrack: rgba(229, 9, 20, 0.5);
+  --jf-palette-Slider-secondaryTrack: rgba(229, 9, 20, 0.5);
 }
 
-/* ===== EFFETS CARTES (zoom Netflix) ===== */
+/* ===== INDICATEUR DE COMPTAGE (bleu → rouge) ===== */
+.countIndicator.indicator {
+  background: #e50914 !important;
+}
+
+/* ===== BARRE DE PROGRESSION ROUGE ===== */
+.itemProgressBarForeground {
+  background: #e50914 !important;
+}
+
+/* ===== BOUTON PLAY OVERLAY SUR CARTE ===== */
+.cardOverlayButton-br {
+  background: rgba(229, 9, 20, 0.85) !important;
+  color: #fff !important;
+}
+
+.cardOverlayButton-br:hover {
+  background: #e50914 !important;
+}
+
+/* ===== HEADER NETFLIX (dégradé transparent) ===== */
+.skinHeader,
+.skinHeader-withBackground {
+  background: linear-gradient(180deg, rgba(20, 20, 20, 0.9) 0%, transparent 100%) !important;
+}
+
+/* ===== ONGLETS ACTIFS (soulignement rouge) ===== */
+.emby-tab-button-active .tabButtonContent::after {
+  background: #e50914 !important;
+}
+
+/* ===== SIDEBAR ===== */
+.mainDrawer {
+  background: rgba(20, 20, 20, 0.95) !important;
+}
+
+.navMenuOption-selected {
+  background: rgba(229, 9, 20, 0.15) !important;
+  color: #fff !important;
+}
+
+/* ===== CARTES - ZOOM NETFLIX AU SURVOL ===== */
 .card {
   transition: transform 0.3s ease !important;
 }
@@ -107,9 +82,52 @@
   position: relative !important;
 }
 
-/* Barre de progression rouge */
-.itemProgressBarForeground {
+/* Fond des cartes sans image */
+.cardPadder {
+  background-color: #1a1a1a !important;
+}
+
+/* ===== BOUTON SUBMIT / PLAY ===== */
+.button-submit,
+.fab,
+.detailButton-primary {
   background: #e50914 !important;
+  color: #fff !important;
+}
+
+.button-submit:hover,
+.fab:hover,
+.detailButton-primary:hover {
+  background: #f40612 !important;
+}
+
+/* ===== BOUTONS SECONDAIRES ===== */
+.detailButton:not(.detailButton-primary) {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.detailButton:not(.detailButton-primary):hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* ===== FOCUS / SELECTION (remplace le bleu) ===== */
+.emby-input:focus,
+.emby-textarea:focus,
+.emby-select:focus {
+  border-color: #e50914 !important;
+}
+
+.emby-checkbox:checked + span + .checkboxOutline,
+.emby-checkbox:checked + span + span + .checkboxOutline {
+  border-color: #e50914 !important;
+  background-color: #e50914 !important;
+}
+
+/* ===== APPFOOTER ===== */
+.appfooter {
+  background: #141414 !important;
 }
 
 /* ===== SCROLLBAR ===== */
