@@ -7,7 +7,7 @@ Theme CSS personnalise pour Jellyfin 10.11.x. Fond noir, interface epuree, style
 Dans Jellyfin, va dans **Tableau de bord > Slogan > Code CSS personnalise** et colle :
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/NonoLMY/jellyfin-netflix-theme@main/theme-netflix.css");
+@import url("https://cdn.jsdelivr.net/gh/NonoLMY/jellyfin-netflix-theme@main/style_jellyfin.css");
 ```
 
 Sauvegarde puis rafraichis la page (Ctrl+Shift+R).
