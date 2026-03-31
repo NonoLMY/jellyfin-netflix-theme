@@ -1,5 +1,4 @@
 /* Netflix Theme for Jellyfin */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 :root {
   color-scheme: dark;
@@ -63,7 +62,7 @@
 html {
   background: #141414 !important;
   color: var(--textColor) !important;
-  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 .backgroundContainer,
@@ -82,7 +81,7 @@ html {
 .skinHeader-blurred {
   background: var(--headerColorGradient) !important;
   color: #fff !important;
-  font-family: 'Inter', sans-serif !important;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 .skinHeader.semiTransparent {
@@ -195,12 +194,12 @@ html {
   color: #fff !important;
   font-weight: 700 !important;
   font-size: 1.3em !important;
-  font-family: 'Inter', sans-serif !important;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 /* ===== BOUTONS ===== */
 .emby-button {
-  font-family: 'Inter', sans-serif !important;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   border-radius: var(--smallRadius) !important;
   transition: background 0.2s ease, transform 0.15s ease !important;
 }
@@ -261,7 +260,7 @@ html {
 .itemName {
   color: #fff !important;
   font-weight: 700 !important;
-  font-family: 'Inter', sans-serif !important;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 .itemOverview {
@@ -320,7 +319,7 @@ html {
   color: #fff !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: var(--smallRadius) !important;
-  font-family: 'Inter', sans-serif !important;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 .emby-input:focus,
