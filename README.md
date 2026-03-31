@@ -1,36 +1,36 @@
 # LamyN Theme
 
-Theme CSS personnalise pour Jellyfin 10.11.x. Fond noir, interface epuree, style cinematographique.
+Custom CSS theme for Jellyfin 10.11.x. Pure black background, clean interface, cinematic style.
 
 ## Installation
 
-Dans Jellyfin, va dans **Tableau de bord > Slogan > Code CSS personnalise** et colle :
+In Jellyfin, go to **Dashboard > Branding > Custom CSS** and paste:
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/NonoLMY/jellyfin-netflix-theme@main/style_jellyfin.css");
+@import url("https://cdn.jsdelivr.net/gh/NonoLMY/style-jellyfin@main/style_jellyfin.css");
 ```
 
-Sauvegarde puis rafraichis la page (Ctrl+Shift+R).
+Save and refresh the page (Ctrl+Shift+R).
 
-> **Note :** Si le theme ne se met pas a jour apres un changement, utilise une URL avec le hash du commit au lieu de `@main` (jsDelivr met en cache de maniere agressive).
+> **Note:** If the theme doesn't update after a change, use a commit hash URL instead of `@main` (jsDelivr caches aggressively).
 
-## Caracteristiques
+## Features
 
-- Fond noir pur (#000000)
-- Police Inter (Google Fonts)
-- Interface epuree et lisible
-- Coins arrondis sur les cartes
-- Effets de survol et animations
-- Compatible desktop et mobile
-- Compatible Jellyfin 10.11.x
+- Pure black background (#000000)
+- Inter font (Google Fonts)
+- Clean and readable interface
+- Rounded card corners
+- Hover effects and animations
+- Desktop and mobile compatible
+- Jellyfin 10.11.x compatible
 
-## Stack technique
+## Tech stack
 
-- CSS pur (pas de preprocesseur)
-- Police : Inter (Google Fonts)
-- CDN : jsDelivr
-- Hebergement : GitHub
+- Pure CSS (no preprocessor)
+- Font: Inter (Google Fonts)
+- CDN: jsDelivr
+- Hosting: GitHub
 
-## Auteur
+## Author
 
 Noel Lamy (@NonoLMY)
