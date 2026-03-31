@@ -1,406 +1,80 @@
-/* Netflix Theme for Jellyfin */
+/* Netflix Theme for Jellyfin 10.11.x */
 
 :root {
-  color-scheme: dark;
+  /* ===== FOND ===== */
+  --jf-palette-background-default: #141414;
+  --jf-palette-background-paper: #1a1a1a;
 
-  /* Couleurs Netflix */
-  --darkerGradientPoint: #141414;
-  --darkerGradientPointAlpha: rgba(20, 20, 20, 0.85);
-  --lighterGradientPoint: #1a1a1a;
-  --lighterGradientPointAlpha: rgba(26, 26, 26, 0.85);
-  --gradientPointAlpha: rgba(26, 26, 26, 0.3);
-  --headerColor: rgba(20, 20, 20, 0.9);
-  --drawerColor: rgba(20, 20, 20, 0.95);
-  --borderColor: rgba(255, 255, 255, 0.1);
-  --darkerBorderColor: rgba(255, 255, 255, 0.05);
-  --lighterBorderColor: rgba(255, 255, 255, 0.15);
-  --selectorBackgroundColor: #333;
-  --selectorBackgroundColorAlpha: rgba(51, 51, 51, 0.5);
+  /* ===== TEXTE ===== */
+  --jf-palette-text-primary: #e5e5e5;
+  --jf-palette-text-secondary: rgba(255, 255, 255, 0.7);
 
-  /* Accent rouge Netflix */
-  --activeColorAlpha: rgba(229, 9, 20, 0.9);
-  --activeColor: #e50914;
-  --uiAccentColor: #e50914;
-  --btnSubmitColor: #e50914;
-  --btnSubmitBorderColor: #f40612;
-  --checkboxCheckedBgColor: #e50914;
-  --highlightOutlineColor: #e50914;
-  --btnMiniPlayColor: #e50914;
-  --btnMiniPlayBorderColor: #f40612;
-  --btnDeleteColor: #b91c1c;
-  --btnDeleteBorderColor: #dc2626;
+  /* ===== ACCENT ROUGE NETFLIX ===== */
+  --jf-palette-primary-main: #e50914;
+  --jf-palette-primary-dark: #b20710;
+  --jf-palette-primary-light: #f40612;
+  --jf-palette-primary-contrastText: #fff;
+  --jf-palette-primary-mainChannel: 229 9 20;
 
-  /* Texte */
-  --textColor: #e5e5e5;
-  --dimTextColor: #b3b3b3;
+  /* ===== SECONDAIRE ===== */
+  --jf-palette-secondary-main: #e50914;
 
-  /* Gradients */
-  --backgroundGradient: linear-gradient(0deg, #141414 35%, #1a1a1a);
-  --cardBackgroundGradient: linear-gradient(0deg, #141414, 25%, #1a1a1a);
-  --headerColorGradient: linear-gradient(180deg, rgba(20, 20, 20, 0.95) 30%, 55%, transparent 90%);
-  --headerColorGradientAlt: linear-gradient(180deg, rgba(20, 20, 20, 1), 70%, transparent);
-  --cardFooterGradient: linear-gradient(0deg, rgb(0 0 0 / 90%), 40%, transparent);
-  --topOSDGradient: linear-gradient(180deg, hsla(0, 0%, 0%, .8), 45%, hsla(0, 0%, 0%, 0));
-  --bottomOSDGradient: linear-gradient(0deg, hsla(0, 0%, 0%, .8), 45%, hsla(0, 0%, 0%, 0));
+  /* ===== ERREURS ===== */
+  --jf-palette-error-main: #c62828;
+  --jf-palette-error-dark: #8a1c1c;
+  --jf-palette-error-light: #d15353;
+  --jf-palette-error-contrastText: #fff;
 
-  /* Rayons */
-  --largerRadius: 0.5em;
-  --largeRadius: 0.375em;
-  --smallRadius: 0.25em;
-  --smallerRadius: 0.15em;
+  /* ===== COULEURS COMMUNES ===== */
+  --jf-palette-common-white: #fff;
 
-  /* Slider lecture */
-  --osdSeekBarPlayedColor: #e50914;
-  --osdSeekBarBufferedColorAlpha: rgba(128, 128, 128, 0.5);
-  --osdSeekBarThumbColor: #e50914;
+  /* ===== ACTIONS / INTERACTIONS ===== */
+  --jf-palette-action-focus: rgba(255, 255, 255, 0.12);
+  --jf-palette-action-hover: rgba(255, 255, 255, 0.08);
+  --jf-palette-action-selectedOpacity: 0.2;
 
-  /* Ombre */
-  --shadow: 0.1em 0.1em 0.15em hsla(0, 0%, 0%, 0.5);
+  /* ===== BORDURES ===== */
+  --jf-palette-divider: rgba(255, 255, 255, 0.08);
+
+  /* ===== HEADER / NAVIGATION ===== */
+  --jf-palette-AppBar-defaultBg: #141414;
+  --jf-palette-AppBar-transparentBg: rgba(20, 20, 20, 0.85);
+
+  /* ===== CHAMPS DE SAISIE ===== */
+  --jf-palette-FilledInput-bg: rgba(255, 255, 255, 0.09);
+
+  /* ===== BOUTONS ===== */
+  --jf-palette-Button-inheritContainedBg: #333;
+  --jf-palette-Button-inheritContainedHoverBg: #444;
+
+  /* ===== NOTIFICATIONS ===== */
+  --jf-palette-SnackbarContent-bg: #222;
+  --jf-palette-SnackbarContent-color: rgba(255, 255, 255, 0.87);
+
+  /* ===== ICONE ETOILE ===== */
+  --jf-palette-starIcon-main: #f2b01e;
 }
 
-/* ===== FOND GENERAL ===== */
-html.preload,
-html.layout-desktop,
-html {
-  background: #141414 !important;
-  background-color: #141414 !important;
-  color: #e5e5e5 !important;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+/* ===== EFFETS CARTES (zoom Netflix au survol) ===== */
+.card {
+  transition: transform 0.3s ease !important;
 }
 
-body,
-body.withSectionTabs,
-body.libraryDocument,
-body.withSectionTabs.libraryDocument {
-  background: #141414 !important;
-  background-color: #141414 !important;
-}
-
-.backgroundContainer,
-.backdropImage,
-.backgroundContainer.withBackdrop,
-.mainAnimatedPages,
-.skinBody {
-  background: #141414 !important;
-  background-color: #141414 !important;
-}
-
-/* ===== HEADER ===== */
-.skinHeader,
-.skinHeader-withBackground,
-.skinHeader-blurred {
-  background: var(--headerColorGradient) !important;
-  color: #fff !important;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-}
-
-.skinHeader.semiTransparent {
-  background: var(--headerColorGradient) !important;
-}
-
-.headerTabs .emby-tab-button {
-  color: var(--dimTextColor) !important;
-  font-weight: 600 !important;
-  text-transform: none !important;
-  letter-spacing: 0 !important;
-}
-
-.headerTabs .emby-tab-button:hover,
-.emby-tab-button-active {
-  color: #fff !important;
-}
-
-.emby-tab-button-active .tabButtonContent::after {
-  background: #e50914 !important;
-}
-
-/* ===== SIDEBAR ===== */
-.mainDrawer {
-  background: var(--drawerColor) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
-  color: #fff !important;
-}
-
-.navMenuOption {
-  color: var(--dimTextColor) !important;
-}
-
-.navMenuOption:hover,
-.navMenuOption-selected {
-  background: rgba(255, 255, 255, 0.1) !important;
-  color: #fff !important;
-}
-
-/* ===== CARTES / AFFICHES ===== */
-.card,
-.cardBox,
-.visualCardBox {
-  background: transparent !important;
-  border: none !important;
-}
-
-.cardBox {
-  border-radius: var(--smallRadius) !important;
-  overflow: hidden !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-}
-
-.cardBox:hover {
+.card:hover {
   transform: scale(1.05) !important;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8) !important;
   z-index: 10 !important;
-}
-
-.cardScalable {
-  border-radius: var(--smallRadius) !important;
-  overflow: hidden !important;
-}
-
-.cardImageContainer {
-  background-color: #222 !important;
-  border-radius: var(--smallRadius) !important;
-}
-
-.cardOverlayContainer {
-  background: var(--cardFooterGradient) !important;
-}
-
-.cardText,
-.cardTextCentered {
-  color: var(--dimTextColor) !important;
-  font-weight: 500 !important;
-}
-
-.cardBox:hover .cardText,
-.cardBox:hover .cardTextCentered {
-  color: #fff !important;
+  position: relative !important;
 }
 
 /* Barre de progression rouge */
-.itemProgressBar {
-  background: rgba(255, 255, 255, 0.2) !important;
-  border-radius: 2px !important;
-}
-
 .itemProgressBarForeground {
   background: #e50914 !important;
 }
 
-/* Bouton play overlay sur carte */
-.cardOverlayButton-br {
-  background: rgba(229, 9, 20, 0.85) !important;
-  color: #fff !important;
-  border: none !important;
-}
-
-.cardOverlayButton-br:hover {
-  background: #e50914 !important;
-  transform: scale(1.1) !important;
-}
-
-/* ===== TITRES DE SECTION ===== */
-.sectionTitle {
-  color: #fff !important;
-  font-weight: 700 !important;
-  font-size: 1.3em !important;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-}
-
-/* ===== BOUTONS ===== */
-.emby-button {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-  border-radius: var(--smallRadius) !important;
-  transition: background 0.2s ease, transform 0.15s ease !important;
-}
-
-.button-submit {
-  background: #e50914 !important;
-  color: #fff !important;
-  font-weight: 700 !important;
-  border: none !important;
-}
-
-.button-submit:hover,
-.button-submit:focus {
-  background: #f40612 !important;
-}
-
-/* Bouton play */
-.fab,
-.detailButton-primary {
-  background: #e50914 !important;
-  color: #fff !important;
-  border: none !important;
-}
-
-.fab:hover,
-.detailButton-primary:hover {
-  background: #f40612 !important;
-  transform: scale(1.05) !important;
-}
-
-/* Boutons secondaires */
-.detailButton:not(.detailButton-primary) {
-  background: rgba(255, 255, 255, 0.08) !important;
-  color: #fff !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-}
-
-.detailButton:not(.detailButton-primary):hover {
-  background: rgba(255, 255, 255, 0.15) !important;
-  border-color: rgba(255, 255, 255, 0.4) !important;
-}
-
-/* ===== PAGE DETAIL ===== */
-.detailPageContent,
-.itemDetailPage {
-  background: #141414 !important;
-}
-
-.detailPagePrimaryContainer {
-  background: linear-gradient(0deg, #141414 0%, transparent 100%) !important;
-}
-
-.detailImageContainer {
-  border-radius: var(--smallRadius) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
-}
-
-.itemName {
-  color: #fff !important;
-  font-weight: 700 !important;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-}
-
-.itemOverview {
-  color: var(--dimTextColor) !important;
-  line-height: 1.6 !important;
-}
-
-.mediaInfoItem,
-.itemMiscInfo {
-  color: #808080 !important;
-}
-
-/* ===== LECTEUR / OSD ===== */
-.osdHeader {
-  background: var(--topOSDGradient) !important;
-}
-
-.videoOsdBottom {
-  background: var(--bottomOSDGradient) !important;
-}
-
-/* Now playing bar */
-.nowPlayingBar {
-  background: rgba(20, 20, 20, 0.95) !important;
-  backdrop-filter: blur(15px) !important;
-  -webkit-backdrop-filter: blur(15px) !important;
-  border-top: none !important;
-}
-
-.nowPlayingBarText {
-  color: #fff !important;
-}
-
-/* ===== DIALOGUES / MODALES ===== */
-.dialog,
-.formDialogContent {
-  background: #1a1a1a !important;
-  color: #fff !important;
-  border-radius: 8px !important;
-}
-
-.formDialogHeader {
-  background: transparent !important;
-  color: #fff !important;
-}
-
-.formDialogFooter {
-  background: #1a1a1a !important;
-}
-
-/* ===== FORMULAIRES ===== */
-.emby-input,
-.emby-textarea,
-.emby-select {
-  background: #222 !important;
-  color: #fff !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  border-radius: var(--smallRadius) !important;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-}
-
-.emby-input:focus,
-.emby-textarea:focus,
-.emby-select:focus {
-  border-color: #e50914 !important;
-}
-
-.inputLabel,
-.fieldDescription,
-.selectLabelText {
-  color: var(--dimTextColor) !important;
-}
-
-/* ===== CHECKBOX ===== */
-.emby-checkbox:checked + span + .checkboxOutline,
-.emby-checkbox:checked + span + span + .checkboxOutline {
-  border-color: #e50914 !important;
-  background-color: #e50914 !important;
-}
-
-/* ===== LISTES ===== */
-.listItem,
-.listItem-border {
-  background: transparent !important;
-  color: #fff !important;
-}
-
-.listItem:hover {
-  background: rgba(255, 255, 255, 0.05) !important;
-}
-
-.secondary,
-.listItemBody {
-  color: var(--dimTextColor) !important;
-}
-
-/* ===== TABLE ===== */
-.paperList {
-  background: transparent !important;
-}
-
-/* ===== PAGE DE CONNEXION ===== */
-#loginPage,
-.loginPage {
-  background: #141414 !important;
-}
-
-/* ===== ADMIN ===== */
-.dashboardDocument,
-.content-primary {
-  background: #141414 !important;
-}
-
 /* ===== SCROLLBAR ===== */
-*::-webkit-scrollbar {
-  width: 6px !important;
-  height: 6px !important;
-}
-
-*::-webkit-scrollbar-track {
-  background: transparent !important;
-}
-
-*::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15) !important;
-  border-radius: 3px !important;
-}
-
-*::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3) !important;
+* {
+  scrollbar-color: #333 #141414;
+  scrollbar-width: thin;
 }
 
 /* ===== ANIMATIONS ===== */
@@ -410,12 +84,12 @@ body.withSectionTabs.libraryDocument {
 }
 
 .itemsContainer {
-  animation: fadeIn 0.3s ease !important;
+  animation: fadeIn 0.3s ease;
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 50em) {
-  .cardBox:hover {
+  .card:hover {
     transform: scale(1.02) !important;
   }
 }
