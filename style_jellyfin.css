@@ -1,14 +1,4 @@
 /*
- * ====================================================================================================
- * @version        0.1.0
- * @created        1st April, 2026
- * @updated        1st April, 2026
- * @package        LamyN Theme
- * @subpackage     style_jellyfin.css
- * @author         Noel Lamy
- * @copyright      Copyright (C) 2026 Noel Lamy. All Rights Reserved
- * @license        Proprietary - All rights reserved
- *
  *   _                        _   _   _____ _
  *  | |    __ _ _ __ ___  _  | \ | | |_   _| |__   ___ _ __ ___   ___
  *  | |   / _` | '_ ` _ \| | |  \| |   | | | '_ \ / _ \ '_ ` _ \ / _ \
@@ -17,9 +7,6 @@
  *                         |___/
  *
  * Theme CSS personnalise pour Jellyfin.
- * Fond noir, interface epuree, style cinematographique.
- *
- * ====================================================================================================
  */
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
